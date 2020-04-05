@@ -11,7 +11,7 @@ public class HeadersSection {
 		PageFactory.initElements(Base.driver, this);
 	}
 
-	@FindBy(xpath = "//span[text()=\"My Account\"]")
+	@FindBy(xpath = "//span[text()='My Account']")
 	public static WebElement myAccountLink;
 
 	@FindBy(linkText = "Register")

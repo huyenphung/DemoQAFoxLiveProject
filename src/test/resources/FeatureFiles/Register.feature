@@ -1,9 +1,8 @@
 Feature: Registration functionality scenario
 
-  @Register @One
-  Scenario: Registraition functionality scenarios
-
-  Scenario: Verify whether the user is able to register into the application by providing all the fields
+ 
+  Scenario: Verify whether the User is able to register into the Application by providing all the fields
+  
     Given I launch the application
     And I navigate to Account Registration page
     When I provide all the below valid details
