@@ -15,11 +15,11 @@ public class Elements {
 
 	public Logger log = Logger.getLogger(Elements.class);
 
-	public static void TypeText(WebElement element, String data) {
+	public static void typeText(WebElement element, String data) {
 		element.sendKeys(data);
 	}
 
-	public static void TypeTextIfElementPresent(WebElement element, String data) {
+	public static void typeTextIfElementPresent(WebElement element, String data) {
 		if (element.isDisplayed()) {
 			element.sendKeys(data);
 		}
@@ -46,7 +46,7 @@ public class Elements {
 	
 	public static boolean VerifyTextEquals(WebElement element,String expected){
 		boolean flag=false;
-		if(element.getText().equals(expected)) {
+		if (element.getText().equals(expected)) {
 			return flag=true;
 		}
 		return flag;
@@ -56,107 +56,107 @@ public class Elements {
 		return Base.driver.getTitle();
 	}
 	
-	public static String getCurrentUrl() {
+	public String getCurrentUrl(){
 		return Base.driver.getCurrentUrl();
 	}
 
-	public static boolean isSelected(WebElement element) {
+	public boolean isSelected(WebElement element) {
 		if (element.isSelected()) {
 			return true;
 		}
 		return false;
 	}
 
-	public static void selectCheckBox(WebElement element) {
+	public void selectCheckBox(WebElement element) {
 		if (!isSelected(element)) {
 			element.click();
 		}
 	}
 
-	public static void deSelectCheckbox(WebElement element) {
+	public void deSelectCheckbox(WebElement element) {
 		if (isSelected(element)) {
 			element.click();
 		}
 	}
 
-	public static void selectRadioButton(WebElement element) {
+	public void selectRadioButton(WebElement element) {
 		if (!isSelected(element)) {
 			element.click();
 		}
 	}
 
-	public static void deSelectRadioButton(WebElement element) {
+	public void deSelectRadioButton(WebElement element) {
 		if (isSelected(element)) {
 			element.click();
 		}
 	}
 	
-	public static boolean isEnabled(WebElement element) {
-		if(element.isEnabled()) {
+	public boolean isEnabled(WebElement element){
+		if (element.isEnabled()) {
 			return true;
 		}
 		return false;
 	}
 	
-	public static boolean isDisplayed(WebElement element) {
-		if(element.isDisplayed()) {
+	public static boolean isDisplayed(WebElement element){
+		if (element.isDisplayed()) {
 			return true;
 		}
 		return false;
 	}
 	
-	public static void selectByText(WebElement element, String text) {
+	public static void selectByText(WebElement element,String text){
 		Select select=new Select(element);
 		select.selectByVisibleText(text);
 	}
 	
-	public void selectByIndex(WebElement element,int index){
+	public static void selectByIndex(WebElement element,int index){
 		Select select=new Select(element);
 		select.selectByIndex(index);
 	}
 	
-	public static void selectByValue(WebElement element, String value) {
+	public static void selectByValue(WebElement element,String value){
 		Select select=new Select(element);
 		select.selectByValue(value);
 	}
 	
-	public static String getFirstSelectedOption(WebElement element) {
+	public static String getFirstSelectedOption(WebElement element){
 		Select select=new Select(element);
 		return select.getFirstSelectedOption().getText();
 	}
 	
-	public static List<WebElement> getAllSelectedOptions(WebElement element) {
+	public static List<WebElement> getAllSelectedOptions(WebElement element){
 		Select select=new Select(element);
 		return select.getAllSelectedOptions();
 		}
 	
-	public static List<WebElement> getAllOptions(WebElement element) {
+	public static List<WebElement> getAllOptions(WebElement element){
 		Select select=new Select(element);
 		return select.getOptions();
 	}
 	
-	public static void deSelectByText(WebElement element, String text) {
+	public static void deSelectByText(WebElement element,String text){
 		Select select=new Select(element);
 		select.deselectByVisibleText(text);
 	}
 	
-	public static void deSelectByIndex(WebElement element, int index) {
+	public static void deSelectByIndex(WebElement element,int index){
 		Select select=new Select(element);
 		select.deselectByIndex(index);
 	}
 	
-	public static void deSelectByValue(WebElement element, String value) {
+	public static void deSelectByValue(WebElement element,String value){
 		Select select=new Select(element);
 		select.deselectByValue(value);
 	}
 	
-	public static void click(WebElement element) {
+	public static void click(WebElement element){
 		Waits.waitUntil(() ->isDisplayed(element));
 		element.click();
 	}
 	
-	public void clickOnlyIfElementPresent(WebElement element){
-		if(isDisplayed(element)) {
+	public static void clickOnlyIfElementPresent(WebElement element){
+		if (isDisplayed(element)) {
 			element.click();
 		}
 	}
